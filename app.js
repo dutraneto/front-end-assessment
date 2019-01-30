@@ -21,10 +21,10 @@ function requestFetch() {
                         <div><img class="img" src="${i.pic}"></img></div>
                         <div class="description">
                           <p class="name">${i.firstName} ${i.lastName}</p>
-                          <p>Email: ${i.email}</p>
-                          <p>Company:${i.company}</p>
-                          <p>Skill: ${i.skill}</p>
-                          <p>Average: ${avg.toFixed(2)}</p>
+                          <p class="desc">Email: ${i.email}</p>
+                          <p class="desc">Company:${i.company}</p>
+                          <p class="desc">Skill: ${i.skill}</p>
+                          <p class="desc">Average: ${avg.toFixed(2)}</p>
                         </div>
                         
         `;
