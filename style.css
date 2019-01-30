@@ -13,6 +13,8 @@ body {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
   align-self: center;
   padding: 30px 0;
   background-color: #f2f2f2;
@@ -21,6 +23,29 @@ body {
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   overflow: scroll;
   border-radius: 10px;
+}
+
+.search {
+  align-self: center;
+  width: 95%;
+}
+
+.input {
+  padding-left: 5px;
+  padding-bottom: 10px;
+  margin: 0 auto 30px auto;
+  border: 0;
+  background: none;
+  border-bottom: 2px solid #aaa;
+  width: 100%;
+  font-family: 'Monserrat', sans-serif;
+  color: #aaa;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.input[type='text']:focus {
+  outline: none;
 }
 
 li {
