@@ -3,6 +3,7 @@
 *::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
 }
 
 body {
@@ -10,6 +11,7 @@ body {
   background-color: #ddd;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .page {
@@ -19,7 +21,7 @@ body {
   padding: 30px 0;
   background-color: #f2f2f2;
   width: 50%;
-  height: 60vh;
+  height: 90vh;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   overflow: scroll;
   border-radius: 10px;
@@ -79,8 +81,16 @@ p.name {
   color: #000;
 }
 
-p.desc {
+p.desc,
+input.desc {
   margin-left: 20px;
+}
+
+.input-tag {
+  padding-bottom: 3px;
+  margin-top: 40px;
+  font-size: 16px;
+  border-bottom: 1px solid #aaa;
 }
 
 .plus {
@@ -97,4 +107,14 @@ p.desc {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-out;
+}
+
+span {
+  background-color: #ddd;
+  padding: 5px 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  font-family: 'Monserrat', sans-serif;
+  font-weight: 100;
+  color: #aaa;
 }

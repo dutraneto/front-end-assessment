@@ -16,7 +16,7 @@ fetch(URL)
       list.appendChild(ul);
       ul.appendChild(li);
       li.innerHTML = `
-                        <div><img class="img" src="${i.pic}"></img></div>
+                      <div><img class="img" src="${i.pic}"></img></div>
                         <div class="description">
                           <p class="name">${i.firstName} ${i.lastName}</p>
                           <p class="desc">Email: ${i.email}</p>
@@ -25,17 +25,25 @@ fetch(URL)
                           <p class="desc">Average: ${avg.toFixed(2)}%</p>
                           <div class="plus accordion" onmouseover="toggleAccordion()">  
                         </div>
-                          <div class="panel">
-                            <p class="desc">Test1: ${grades[0]}%</p>
-                            <p class="desc">Test2: ${grades[1]}%</p>
-                            <p class="desc">Test3: ${grades[2]}%</p>
-                            <p class="desc">Test4: ${grades[3]}%</p>
-                            <p class="desc">Test5: ${grades[4]}%</p>
-                            <p class="desc">Test6: ${grades[5]}%</p>
-                            <p class="desc">Test7: ${grades[6]}%</p>
-                            <p class="desc">Test8: ${grades[7]}%</p>
-                          </div>                 
-                        </div>                  
+                        <div class="panel">
+                          <p class="desc">Test1: ${grades[0]}%</p>
+                          <p class="desc">Test2: ${grades[1]}%</p>
+                          <p class="desc">Test3: ${grades[2]}%</p>
+                          <p class="desc">Test4: ${grades[3]}%</p>
+                          <p class="desc">Test5: ${grades[4]}%</p>
+                          <p class="desc">Test6: ${grades[5]}%</p>
+                          <p class="desc">Test7: ${grades[6]}%</p>
+                          <p class="desc">Test8: ${grades[7]}%</p>
+
+                          <div  id="" class="tags-box">
+
+                          </div>
+                          <div class="input-box">
+                            <input type="text" id="" class="desc input input-tag" onkeypress="addTag()" value="" placeholder="Add tag" />
+                          </div>   
+                        </div>
+                                      
+                      </div>                  
         `;
     }
   });
@@ -54,6 +62,45 @@ function search() {
     } else {
       l.style.display = 'none';
     }
+  }
+}
+// function searchTag() {
+//   let input = document.getElementById('input');
+//   let filter = input.value.toUpperCase(); // I spent almost 2 hours strugling with because thar I forgot parentesis
+//   let li = document.getElementsByTagName('li');
+//   let name, textValue;
+//   for (let l of li) {
+//     // console.log(i);
+//     name = l.getElementsByTagName('p')[0];
+//     console.log(name.textContent);
+//     if (name.textContent.toUpperCase().indexOf(filter) > -1) {
+//       l.style.display = '';
+//     } else {
+//       l.style.display = 'none';
+//     }
+//   }
+// }
+
+function addTag() {
+  let inputTag = document.getElementsByClassName('input-tag');
+  let getValue = '';
+
+  for (let i = 0; i < inputTag.length; i++) {
+    console.log(inputTag.length);
+    inputTag[i].addEventListener('keypress', function(event) {
+      if (event.which === 13) {
+        getValue = this.value;
+        this.value = '';
+
+        if (getValue.length > 0) {
+          let tags = document.getElementsByClassName('tags-box');
+          let span = document.createElement('span');
+          tags[i].appendChild(span);
+          span.innerHTML = getValue;
+          getValue = '';
+        }
+      }
+    });
   }
 }
 
